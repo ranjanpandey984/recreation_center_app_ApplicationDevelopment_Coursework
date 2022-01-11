@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ArrayOfVisitorTicket xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <VisitorTicket>
+    <Name>ranjan</Name>
+    <Date>2022-01-11T00:00:00</Date>
+    <Day>Tuesday</Day>
+    <CustomerType>Adult &gt; 12</CustomerType>
+    <StartTime>3:33:59 PM</StartTime>
+    <Duration>2 Hrs</Duration>
+    <TotalVistors>12</TotalVistors>
+    <Price>12000</Price>
+  </VisitorTicket>
+  <VisitorTicket>
+    <Name>hari</Name>
+    <Date>2022-01-10T00:00:00</Date>
+    <Day>Monday</Day>
+    <CustomerType>Child (5-12)</CustomerType>
+    <StartTime>3:34:07 PM</StartTime>
+    <Duration>3 Hrs</Duration>
+    <TotalVistors>12</TotalVistors>
+    <Price>12600</Price>
+  </VisitorTicket>
+  <VisitorTicket>
+    <Name>hari</Name>
+    <Date>2022-01-11T00:00:00</Date>
+    <Day>Tuesday</Day>
+    <CustomerType>Group of 10</CustomerType>
+    <StartTime>3:34:14 PM</StartTime>
+    <Duration>3 Hrs</Duration>
+    <TotalVistors>2</TotalVistors>
+    <Price>2400</Price>
+  </VisitorTicket>
+  <VisitorTicket>
+    <Name>ram</Name>
+    <Date>2022-01-12T00:00:00</Date>
+    <Day>Wednesday</Day>
+    <CustomerType>Group of 15</CustomerType>
+    <StartTime>3:34:26 PM</StartTime>
+    <Duration>Whole Day</Duration>
+    <TotalVistors>5</TotalVistors>
+    <Price>11500</Price>
+  </VisitorTicket>
+</ArrayOfVisitorTicket>

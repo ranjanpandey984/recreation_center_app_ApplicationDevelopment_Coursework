@@ -482,11 +482,7 @@ namespace recreationapp
             {
                 MessageBox.Show("File Not Found as there are no visitor details yet.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
         }
 
         private void DisplayChartBtn_Click(object sender, EventArgs e)
@@ -507,6 +503,124 @@ namespace recreationapp
                 EarningBarChart.Series["TotalEarning"].XValueMember = "Day";
                 EarningBarChart.Series["TotalEarning"].YValueMembers = "TotalEarning";
          
+            }
+            else
+            {
+                MessageBox.Show("Please Generate Report First", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void AscendingTotalEarning()
+        {
+            WeeklyReport temp;
+            for (int i = 0; i < reportList.Count - 1; i++)
+            {
+                for (int j = 0; j < reportList.Count - i - 1; j++)
+                {
+                    if (reportList[j].TotalEarning > reportList[j + 1].TotalEarning)
+                    {
+                        temp = reportList[j + 1];
+                        reportList[j + 1] = reportList[j];
+                        reportList[j] = temp;
+                    }
+                }
+            }
+            int a = reportList.Count;
+
+        }
+
+        public void DescendingTotalEarning()
+        {
+            WeeklyReport temp;
+            for (int i = 0; i < reportList.Count - 1; i++)
+            {
+                for (int j = 0; j < reportList.Count - i - 1; j++)
+                {
+                    if (reportList[j].TotalEarning < reportList[j + 1].TotalEarning)
+                    {
+                        temp = reportList[j + 1];
+                        reportList[j + 1] = reportList[j];
+                        reportList[j] = temp;
+                    }
+                }
+            }
+            int a = reportList.Count;
+
+        }
+
+        public void AscendingTotalVisitors()
+        {
+            WeeklyReport temp;
+            for (int i = 0; i < reportList.Count - 1; i++)
+            {
+                for (int j = 0; j < reportList.Count - i - 1; j++)
+                {
+                    if (reportList[j].TotalVisitors > reportList[j + 1].TotalVisitors)
+                    {
+                        temp = reportList[j + 1];
+                        reportList[j + 1] = reportList[j];
+                        reportList[j] = temp;
+                    }
+                }
+            }
+            int a = reportList.Count;
+
+        }
+        public void DescendingTotalVisitors()
+        {
+            WeeklyReport temp;
+            for (int i = 0; i < reportList.Count - 1; i++)
+            {
+                for (int j = 0; j < reportList.Count - i - 1; j++)
+                {
+                    if (reportList[j].TotalEarning < reportList[j + 1].TotalEarning)
+                    {
+                        temp = reportList[j + 1];
+                        reportList[j + 1] = reportList[j];
+                        reportList[j] = temp;
+                    }
+                }
+            }
+            int a = reportList.Count;
+
+        }
+        private void AscendingOrderBtn_Click(object sender, EventArgs e)
+        {
+            if (reportList != null)
+            {
+                AscendingTotalEarning();
+                EarningBarChart.DataSource = reportList;
+                EarningBarChart.Series["TotalEarning"].ChartType = SeriesChartType.Column;
+                EarningBarChart.Series["TotalEarning"].XValueMember = "Day";
+                EarningBarChart.Series["TotalEarning"].YValueMembers = "TotalEarning";
+
+                AscendingTotalVisitors();
+                VisitorsBarChart.DataSource = reportList;
+                VisitorsBarChart.Series["Visitor"].ChartType = SeriesChartType.Column;
+                VisitorsBarChart.Series["Visitor"].XValueMember = "Day";
+                VisitorsBarChart.Series["Visitor"].YValueMembers = "TotalVisitors";
+            }
+            else
+            {
+                MessageBox.Show("Please Generate Report First", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void DescendingOrderBtn_Click(object sender, EventArgs e)
+        {
+            if (reportList != null)
+            {
+                DescendingTotalEarning();
+                EarningBarChart.DataSource = reportList;
+                EarningBarChart.Series["TotalEarning"].ChartType = SeriesChartType.Column;
+                EarningBarChart.Series["TotalEarning"].XValueMember = "Day";
+                EarningBarChart.Series["TotalEarning"].YValueMembers = "TotalEarning";
+
+                DescendingTotalVisitors();
+                VisitorsBarChart.DataSource = reportList;
+                VisitorsBarChart.Series["Visitor"].ChartType = SeriesChartType.Column;
+                VisitorsBarChart.Series["Visitor"].XValueMember = "Day";
+                VisitorsBarChart.Series["Visitor"].YValueMembers = "TotalVisitors";
             }
             else
             {
