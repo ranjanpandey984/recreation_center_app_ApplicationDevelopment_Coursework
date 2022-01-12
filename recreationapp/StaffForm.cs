@@ -545,7 +545,6 @@ namespace recreationapp
                 }
             }
             int a = reportList.Count;
-
         }
 
         public void AscendingTotalVisitors()

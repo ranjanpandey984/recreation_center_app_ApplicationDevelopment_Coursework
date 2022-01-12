@@ -8,7 +8,8 @@ namespace recreationapp
 {
     internal class WeeklyReport
     {
-        public  string Day { get; set; }
+
+        public string Day { get; set; }
 
         public int TotalVisitors { get; set; }
 
